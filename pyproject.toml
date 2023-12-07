@@ -33,7 +33,7 @@ classifiers = [
     "Topic :: Software Development",
     "Typing :: Typed",
 ]
-name = "project-template"
+name = "litestar-oidc"
 version = "0.1.0"
 description = "template-project is a Python template project designed to simplify the setup of a new project."
 readme = "README.md"
@@ -41,17 +41,18 @@ license = {text = "MIT"}
 requires-python = ">=3.8,<4.0"
 dependencies = [
     "litestar[standard]",
+    "authlib>=1.2.1",
 ]
 
 [project.urls]
-"Issue Tracker" = "https://github.com/litestar-org/project-template/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
-Changelog = "https://github.com/litestar-org/project-template/releases/"
+"Issue Tracker" = "https://github.com/litestar-org/litestar-oidc/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc"
+Changelog = "https://github.com/litestar-org/litestar-oidc/releases/"
 Twitter = "https://twitter.com/LitestarAPI"
 Reddit = "https://www.reddit.com/r/litestarapi"
 Discord = "https://discord.gg/MmcwxztmQb"
 Blog = "https://blog.litestar.dev"
 homepage = "https://litestar.dev/"
-repository = "https://github.com/litestar-org/project-template"
+repository = "https://github.com/litestar-org/litestar-oidc"
 documentation = "https://docs.litestar.dev/"
 
 [build-system]
@@ -153,6 +154,7 @@ show_error_codes = true
 [tool.ruff]
 select = ["ALL"]
 ignore = [
+    "ANN001", # Annotate self in method signature
     "A003", # flake8-builtins - class attribute {name} is shadowing a python builtin
     "B010", # flake8-bugbear - do not call setattr with a constant attribute value
     "D100", # pydocstyle - missing docstring in public module

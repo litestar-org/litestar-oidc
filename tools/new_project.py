@@ -1,4 +1,4 @@
-"""Script to replace occurrences of 'project-template' with new name in all files of a directory."""
+"""Script to replace occurrences of 'litestar-oidc' with new name in all files of a directory."""
 
 import re
 from pathlib import Path
@@ -7,18 +7,18 @@ import click
 
 
 def replace_template_name(directory: Path, new_name: str) -> None:
-    """Replaces occurrences of 'project-template' with new name in all files of a directory.
+    """Replaces occurrences of 'litestar-oidc' with new name in all files of a directory.
 
     Args:
         directory (Path): The directory path to scan.
-        new_name (str): The new name to replace 'project-template' with.
+        new_name (str): The new name to replace 'litestar-oidc' with.
     """
     for file in directory.rglob("*"):
         if file.is_file():
             with Path(file).open(encoding="utf-8", errors="ignore") as f:
                 content = f.read()
 
-            new_content = re.sub(r"project-template", new_name, content)
+            new_content = re.sub(r"litestar-oidc", new_name, content)
 
             with Path(file).open("w", encoding="utf-8", errors="ignore") as f:
                 f.write(new_content)
